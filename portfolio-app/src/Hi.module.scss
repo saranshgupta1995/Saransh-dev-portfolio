@@ -1,0 +1,74 @@
+.hi{
+
+    font-size: 4rem;
+    padding: 40px;
+
+    h1{
+        font-size: 2em;
+    }
+
+    p{
+        font-size: 0.7em;
+    }
+
+}
+
+.name{
+    color:lighten($color: #e2e2e2, $amount: 40);
+    position: relative;
+    backface-visibility: hidden;
+
+    &::after{
+        content: attr(surname);
+        position: absolute;
+        left: 0px;
+        opacity: 0;
+        transition-duration: .2s;
+        transition-timing-function: ease-in-out;
+    }
+
+    &:hover::after{
+        opacity: 1;
+        left: 3.7em;
+    }
+
+}
+
+
+@keyframes ninjaJump{
+
+    0%{
+        transform: rotateZ(0deg)
+    }
+    
+    100%{
+        top:0;
+        transform: rotateZ(4320deg)
+    }
+
+}
+
+.ninja{
+    color:transparent;
+    position: relative;
+    backface-visibility: hidden;
+    transform: rotateZ(0deg);
+    
+    &::after{
+        transition-duration: 0.6s;
+        transform-origin: right;
+        content: attr(job);
+        color: #e2e2e2;
+        position: absolute;
+        left: 0px;
+        font-size: 1em;
+        animation: ninjaJump 1.5s ease-in-out 1s;
+    }
+
+    &:hover::after{
+        transform: rotateZ(-70deg);
+        opacity: 0;
+        font-size: .8em;
+    }
+
+}
