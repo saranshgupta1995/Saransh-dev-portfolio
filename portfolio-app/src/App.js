@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import HiModule from './Hi';
+import CanvasBG from './CanvasBG';
 
 class App extends Component {
 
@@ -17,6 +18,7 @@ class App extends Component {
   render() {
     return (
       <>
+      <CanvasBG></CanvasBG>
       <HiModule></HiModule>
       </>
     );
